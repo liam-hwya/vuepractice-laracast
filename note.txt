@@ -6,4 +6,7 @@ mounted() works when all the other works are ready to go,
 
 v-on:click // when clicked
 @click // is the same as v-on:click
-v-on:click="onClick" // onClick is the method namee
+v-on:click="onClick" // onClick is the method name
+
+v-bind:title="title" // attribute binding
+:title = "title" // same attribute binding
