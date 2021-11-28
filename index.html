@@ -18,72 +18,55 @@
 
     <div id="root">
 
-        <input type="text" v-model="newName"> 
-        
-        <button @click="addName" :title="title">Add</button>
+        <h2>All tasks</h2>
 
         <ul>
-            <li v-for="name in names" v-text="name"></li>
+
+            <li v-for="task in tasks" v-text="task.title"></li>
+
         </ul>
 
-        <button :class="{ 'is-loading' : isLoading }" @click="toggleClass">Red Me</button>
+        <hr>
 
-        <button :disabled="isDisabled" @click="toggleDisable">Disable Me</button>
+        <h2>Incomplete tasks</h2>
 
-    </div>
+        <ul>
 
+            <li v-for="task in inCompleteTasks" v-text="task.title"></li>
+
+        </ul>
     
+    </div>
 
     <script>
 
-        
-
         var app = new Vue({
+
             el: "#root",
+
             data: {
-                title: 'Add a new name for list',
-                newName: '',
-                names: ['liam','asaurus'],
-                isLoading: false,
-                isDisabled: false
+                tasks: [
+
+                    {title: 'Go to the store', completed: false},
+                    {title: 'Go to the school', completed: true},
+                    {title: 'Date with my GF', completed: false},
+                    {title: 'Have lunch', completed: false}
+                ]
             },
-            
-            methods: {
 
-                addName() {
+            computed: {
 
-                    this.names.push(this.newName)
+                inCompleteTasks() {
 
-                    this.newName = ''
-
-                },
-
-                toggleClass() {
-
-                    this.isLoading = true
-                },
-
-                toggleDisable() {
-
-                    this.isDisabled = true
+                    return this.tasks.filter(task => !task.completed)
                 }
-            },
-
-            // mounted() {
-
-            //     document.querySelector("#add-btn").addEventListener('click',()=>{
-            //         let name = document.querySelector("#name-input");
-
-            //         app.names.push(name.value);
-
-            //         name.value = "";
-            //     })
                 
-            // }
+            }
         })
 
-        
     </script>
+
+    
     
 </body>
 </html>
