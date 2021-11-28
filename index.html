@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    
     <style>
         .is-loading {
             background: red
@@ -18,54 +19,14 @@
 
     <div id="root">
 
-        <h2>All tasks</h2>
-
-        <ul>
-
-            <li v-for="task in tasks" v-text="task.title"></li>
-
-        </ul>
-
-        <hr>
-
-        <h2>Incomplete tasks</h2>
-
-        <ul>
-
-            <li v-for="task in inCompleteTasks" v-text="task.title"></li>
-
-        </ul>
+        <task>somethinng 1</task>
+        <task>somethinng 2</task>
+        <task>somethinng 3</task>
+        <task>somethinng 4</task>
     
     </div>
 
-    <script>
-
-        var app = new Vue({
-
-            el: "#root",
-
-            data: {
-                tasks: [
-
-                    {title: 'Go to the store', completed: false},
-                    {title: 'Go to the school', completed: true},
-                    {title: 'Date with my GF', completed: false},
-                    {title: 'Have lunch', completed: false}
-                ]
-            },
-
-            computed: {
-
-                inCompleteTasks() {
-
-                    return this.tasks.filter(task => !task.completed)
-                }
-                
-            }
-        })
-
-    </script>
-
+    <script src="main.js"></script>
     
     
 </body>

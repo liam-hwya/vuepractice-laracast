@@ -12,3 +12,5 @@ v-bind:title="title" // attribute binding
 :title = "title" // same attribute binding
 
 computed: //
+
+<li><slot></slot></li>
