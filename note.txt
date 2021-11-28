@@ -10,3 +10,5 @@ v-on:click="onClick" // onClick is the method name
 
 v-bind:title="title" // attribute binding
 :title = "title" // same attribute binding
+
+computed: //
